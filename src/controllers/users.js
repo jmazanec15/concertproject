@@ -2,16 +2,14 @@ var express   = require('express'),
     Base      = express.Router(),
     fs        = require('fs'),
     mongoose  = require('mongoose'),
-    User   = require('../models/user');
+    User   = require(__dirname + '/../models/user');
 
 Base.route('/?')
   // GET /
   // -----
   // Render the login page
   .get(function(req, res, next) {
-    res.render('login', {
-      // csrfToken: req.csrf()
-    });
+    res.render('login', {});
   })
   // POST /
   // ------
@@ -19,12 +17,12 @@ Base.route('/?')
   .post(function(req, res, next) {
     User.create({
       username: req.body.username,
-      password: req.body.password
+      password: req.body.username
     }, function(err, user) {
       if (err) {
-        console.log(err)
+        console.log(err);
       } else {
-        console.log(user)
+        console.log(user);
       }
     })
   })  
