@@ -1,18 +1,24 @@
 var express   = require('express'),
-    Base      = express.Router(),
+    Apis      = express.Router(),
     fs        = require('fs'),
     mongoose  = require('mongoose'),
-    User   = require('../models/user');
+    superagent = require('superagent');
 
-Base.route('/api')
-  .get(function(req, res, next) {
-//     $.ajax({
-//     url:'http://api.bandsintown.com/artists/Skrillex/events.json?api_version=2.0&app_id=YOUR_APP_ID',
-//     type:'get',
-//     dataType:'json',
-//     success: function(data) {
-//         res.send(data);
-//     }
+Apis.route('/')
+    .get(function(req, res, next) {
 
-// })
-  })
+      res.render('apis');
+        
+    })
+
+.post(function(req, res, next) {
+
+  var artist = req.body.artist
+  var url = 'http://api.bandsintown.com/artists/' + artist + '/events.json?api_version=2.0&app_id=projectGA';
+  superagent.get(url, function(error, response){
+    var Obj = response.body[0].title;
+    console.log(Obj);
+  });
+  res.send('response');
+})
+module.exports = Apis;

@@ -26,7 +26,8 @@
     "gulp-live-server": "0.0.30",
     "hbs": "^4.0.0",
     "jQuery": "^1.7.4",
-    "nodemon": "^1.9.2"
+    "nodemon": "^1.9.2",
+    "superagent": "^2.0.0"
   },
   "dependencies": {
     "bcrypt": "^0.8.7",

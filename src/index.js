@@ -35,6 +35,9 @@ require('./models/db');
 // require users controller
 app.use('/users', require('./controllers/users'));
 
+
+app.use('/apis', require('./controllers/apis'));
+
 // Start server, listen in on a port
 var server = app.listen(3000, function() {
   console.log('Server listening at http://localhost:' + server.address().port);
