@@ -4,9 +4,29 @@ var express   = require('express'),
     mongoose  = require('mongoose'),
     User   = require('../models/user');
 
-Base.route('/?') 
+Base.route('/?')
+  // GET /
+  // -----
+  // Render the login page
   .get(function(req, res, next) {
-    res.render('../views/login')
+    res.render('login', {
+      // csrfToken: req.csrf()
+    });
   })
+  // POST /
+  // ------
+  // Log the user in
+  .post(function(req, res, next) {
+    User.create({
+      username: req.body.username,
+      password: req.body.password
+    }, function(err, user) {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log(user)
+      }
+    })
+  })  
 
 module.exports = Base;
