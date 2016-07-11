@@ -15,5 +15,22 @@
   "bugs": {
     "url": "https://github.com/jmazanec15/concertproject/issues"
   },
-  "homepage": "https://github.com/jmazanec15/concertproject#readme"
+  "homepage": "https://github.com/jmazanec15/concertproject#readme",
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "fs": "0.0.2",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.1.0",
+    "gulp-live-server": "0.0.30",
+    "hbs": "^4.0.0",
+    "nodemon": "^1.9.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.5.3"
+  }
 }
