@@ -23,9 +23,12 @@ Base.route('/?')
     }, function(err, user) {
       if (err) {
         console.log(err)
+        res.send('err')
       } else {
         console.log(user)
+        res.send('worked')
       }
+
     })
   })  
 
