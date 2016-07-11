@@ -32,8 +32,5 @@ Base.route('/?')
     })
   })  
 
-Base.route('/profiles')
-  .get(function(req, res, next) {
-    User.find()
-  })
+
 module.exports = Base;
