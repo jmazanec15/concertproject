@@ -1,0 +1,19 @@
+{
+  "name": "concertproject",
+  "version": "1.0.0",
+  "description": "Set up full stack website that manages concerts. Three different functionalities: 1.)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmazanec15/concertproject.git"
+  },
+  "author": "Jack Mazanec, Cyrus Goudarzi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jmazanec15/concertproject/issues"
+  },
+  "homepage": "https://github.com/jmazanec15/concertproject#readme"
+}
