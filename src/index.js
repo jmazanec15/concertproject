@@ -12,12 +12,12 @@ var express = require('express'),
     bodyParser = require('body-parser');
 
 // Configuring the applicartion
-// app.engine('hbs', exphbs({
-//   defaultLayout:  'main',
-//   partialsDir:    __dirname + '/views/partials',
-//   layoutsDir:     __dirname + '/views/layouts',
-//   extname:        '.hbs'
-// }));
+app.engine('hbs', exphbs({
+  defaultLayout:  'main',
+  partialsDir:    __dirname + '/views/partials',
+  layoutsDir:     __dirname + '/views/layouts',
+  extname:        '.hbs'
+}));
 
 app.use(bodyParser.json())// supports json encoded bodies
 app.use(bodyParser.urlencoded({extended: true}))// supports encoded bodies
@@ -27,6 +27,10 @@ app.set('views', __dirname + '/views');
 
 // Configure serving static assets
 app.use(express.static(__dirname + '/public'));
+
+// require db
+
+require('./models/db');
 
 // require users controller
 app.use('/users', require('./controllers/users'));
