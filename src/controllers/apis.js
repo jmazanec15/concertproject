@@ -14,11 +14,19 @@ Apis.route('/')
 .post(function(req, res, next) {
 
   var artist = req.body.artist
-  var url = 'http://api.bandsintown.com/artists/' + artist + '/events.json?api_version=2.0&app_id=projectGA';
+  var url = 'http://api.bandsintown.com/artists/';
+  // var url = 'http://api.bandsintown.com/artists/' + artist + '/events.json?api_version=2.0&app_id=projectGA';
   superagent.get(url, function(error, response){
-    var Obj = response.body[0].title;
+    if (error) {
+      res.render('apis');
+    } else {
+    // var Obj = response.body[0].title;
+    var Obj = response.body;
     console.log(Obj);
+    // apis.append('<li>'+ Obj +'</li>');
+    res.render('apis');
+    }
   });
-  res.send('response');
+  
 })
 module.exports = Apis;
