@@ -1,11 +1,26 @@
 <h1>Apis</h1>
+
 <form id="api-filter" action="/apis" method="post">
 <ul>
   <li>
+    <label>Enter Band: </label>
     <input type="text" name="artist" val="">
 
   </li>
 
   <button type="submit">Submit</button>
 </ul>
+
+
 </form>
+
+<ul>
+  {{#each pageTitle}}
+    <li><a href="#">{{this}}</a></li>
+  {{/each}}
+  <!-- <li>{{{pageTitle}}}</li> -->
+</ul>
+
+<ul class="myAdds">
+  
+</ul>
