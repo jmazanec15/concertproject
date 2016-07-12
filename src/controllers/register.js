@@ -36,7 +36,7 @@ registerController.route('/?')
                           console.log(error)
                         } else {
                           console.log(user)
-                          res.send('Welcome ' + user.username)
+                          res.redirect('/apis')
                         }
                       })
                    }
