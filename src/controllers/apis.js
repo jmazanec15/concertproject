@@ -12,7 +12,7 @@ Apis.route('/')
     })
 
 .post(function(req, res, next) {
-
+  // sets artists
   var artist = req.body.artist
   // var url = 'http://api.bandsintown.com/artists/';
   var url = 'http://api.bandsintown.com/artists/' + artist + '/events.json?api_version=2.0&app_id=projectGA';
@@ -25,7 +25,7 @@ Apis.route('/')
     //console.log(Obj)
     var eventsArray = [];
     var datesArray = [];
-    console.log(Obj);
+
     for (var i = 0; i <= Obj.length - 1; i++) {
       var date = Obj[i].datetime;
       // 2016-10-08T20:00:00
