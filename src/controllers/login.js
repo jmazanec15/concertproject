@@ -16,17 +16,18 @@ loginController.route('/?')
   //-----
   //Log the user in
   .post(function(req, res, next) {
-    User.findOne({username: req.body.username}, function(err, user) {
-      if (err) {
-        res.send('Error or Could not find user');
+    User.findOne({username: req.body.password}, function(err, user) {
+      if (err || !user) {
+        console.log(hash)
+        res.send('Error or Incorrect Password');
       } else {
-        var hash = bcrypt.hashSync(req.body.password, 10);
-        bcrypt.compare(req.body.password, hash, function(error, hash) {
-          if (error) {
+        var hash = bcrypt.hashSync(user.password, 10);
+        bcrypt.compare(req.body.password, hash, function(error, result) {
+          if (error || result) {
             console.log(error)
-          } else if (hash == false) {
-            res.send('Incorrect password')
+            res.send('Error or Incorrect password')
           } else {
+            console.log(result)
             res.redirect('/apis')
           }
         })
