@@ -17,18 +17,34 @@ Base.route('/register')
   // ------
   // Add user account to user model
   .post(function(req, res, next) {
-    User.findOne({username: req.body.username}, function(err, user) {
-      if (err || !user) {
-        res.send('err');
-      } else if (req.body.username === user.username) {
-        console.log(user.username)
-        res.send('Already taken')
-      } else if (user) {
-        console.log(user)
-        res.send('Welcome')
-      }
-    })
-  })
+          //check for exisiting users
+          User.findOne({username: req.body.username}, function(err, user) {
+              if (err || user) {
+                console.log(err)
+                res.send('Error or username already taken');
+              } else {
+                    bcrypt.hash(req.body.password, 10, function(err, hash) {
+                    if (err) {
+                      console.log(err),
+                      res.send('Err')
+                    } else {
+                      User.create({
+                        username: req.body.username,
+                        password: hash
+                      }, function (error, user) {
+                        if (error) {
+                          console.log(error)
+                        } else {
+                          console.log(user)
+                          res.send('Welcome ' + user.username)
+                        }
+                      })
+                   }
+                })
+              }
+          })
+          
+  }) 
 
 
 
