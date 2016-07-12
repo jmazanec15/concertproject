@@ -35,6 +35,9 @@ require('./models/db');
 // require users controller
 app.use('/users', require('./controllers/users'));
 
+app.use('/register', require('./controllers/register'));
+app.use('/login', require('./controllers/login'));
+
 
 app.use('/apis', require('./controllers/apis'));
 
