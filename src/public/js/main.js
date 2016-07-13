@@ -1,6 +1,5 @@
-$( "#date" ).datepicker();
 
-$('a').click(function(){
+$('.concertClick').click(function(){
   $('.myAdds').append('<li>'+ this.text +'</li>')
   
 })
