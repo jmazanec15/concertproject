@@ -7,7 +7,7 @@ var express            = require('express'),
 registerController.route('/?')
   // GET /
   // -----
-  // Render the login page
+  // Render the register page
   .get(function(req, res, next) {
     res.render('register', {
       // csrfToken: req.csrf()
@@ -37,7 +37,6 @@ registerController.route('/?')
                         } else {
                           req.session.isLoggedIn = true;
                           req.session.userId     = user._id;
-                          console.log(user)
                           res.redirect('/apis')
                         }
                       })
