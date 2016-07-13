@@ -26,6 +26,8 @@ loginController.route('/?')
             console.log(error)
             res.send('Error or Incorrect password')
           } else {
+            req.session.isLoggedIn = true;
+            req.session.userId     = user._id;
             console.log(result)
             res.redirect('/apis')
           }

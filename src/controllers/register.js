@@ -35,6 +35,8 @@ registerController.route('/?')
                         if (error) {
                           console.log(error)
                         } else {
+                          req.session.isLoggedIn = true;
+                          req.session.userId     = user._id;
                           console.log(user)
                           res.redirect('/apis')
                         }
