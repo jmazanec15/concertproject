@@ -1,6 +1,6 @@
-$('.concertClick').click(function(){
-  // need to push this.text into the concertsArray in for the certain user
+$( "#date" ).datepicker();
 
+$('a').click(function(){
   $('.myAdds').append('<li>'+ this.text +'</li>')
-
+  
 })
