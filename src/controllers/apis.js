@@ -6,17 +6,24 @@
     superagent = require('superagent');
 
 
-// Apis.route('/add')
-//   .post(function(req, res, next) {
-//     User.findById('_id': , function(err, user) {
-//       if (err) {
-//         console.log(err)
-//       } else {
-//         user.eventsArray.push(req.body.event);
-//       }
+Apis.route('/add')
+  .post(function(req, res, next) {
+    console.log(req.session.userId, req.body.event, '<------ SESSION OBJECT')
+    User.fin
+    // nfind by id the users concertArray
+    // we respond with res.json()
+    res.json({
+      // status: 'ok',
+      // concerts: users.concertArray
+    }) // <--- Don't render arute onan AJAX call
+    //  Respond with jSON(res.json({...}))
 
-//     })
-//   });
+    // if error...
+    // res.json({
+    //   status: 'error',
+    //   concerts: []
+    // })
+  });
 
 Apis.route('/')
   //GET

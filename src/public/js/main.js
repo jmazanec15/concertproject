@@ -1,22 +1,28 @@
+// add same funtion on load
 
-var dataObject = {};
 
-$('.concertClick').click(function(){
-  $('.myAdds').append('<li>'+ this.text +'</li>')
-  var eventName = this.text;
 
-  dataObject.event = this.text;
+// Concert Add Event Handler
+// -------------------------
+// Listens for clicks on concert
+// anchor tags and stores them to DB
+// via AJAX request.
+$('.concertClick').click(function() {
+  var self = this;
 
   $.ajax({
-  url:'/apis/add',
-  type:'post',
-  data: dataObject,
-  error: function(error) {
-    console.log(error);
-  },
-  success: function(data) {
-    return data;
+    url:'/apis/add',
+    type:'post',
+    data: {
+      event:  this.text,
+      userId: $('#userId').text()
+    },
+    error: function(error) {
+      console.log(error);
+      alert(error);
+    },
+    success: function(data) {
+      $('.myAdds').append('<li>'+ self.text +'</li>');
     }
-
-  })
-})
+  });
+});

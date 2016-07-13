@@ -28,8 +28,8 @@ loginController.route('/?')
           } else {
             req.session.isLoggedIn = true;
             req.session.userId     = user._id;
-            console.log(result)
-            res.redirect('/apis')
+            // redirect to /apis
+            res.redirect('/apis');
           }
         })
       }
