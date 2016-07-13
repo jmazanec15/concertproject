@@ -1,5 +1,23 @@
 // add same funtion on load
+$('document').ready(function() {
+    var self = this;
 
+  $.ajax({
+    url:'/apis/add',
+    type:'post',
+    data: {
+      event:  this.text,
+      userId: $('#userId').text()
+    },
+    error: function(error) {
+      console.log(error);
+      alert(error);
+    },
+    success: function(data) {
+      $('.myAdds').append('<li>'+ data.concertIDs +'</li>');
+    }
+  });
+})
 
 
 // Concert Add Event Handler
@@ -22,7 +40,7 @@ $('.concertClick').click(function() {
       alert(error);
     },
     success: function(data) {
-      $('.myAdds').append('<li>'+ self.text +'</li>');
+      $('.myAdds').append('<li>'+ data.concertIDs +'</li>');
     }
   });
 });

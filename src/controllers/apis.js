@@ -8,14 +8,25 @@
 
 Apis.route('/add')
   .post(function(req, res, next) {
-    console.log(req.session.userId, req.body.event, '<------ SESSION OBJECT')
-    User.fin
-    // nfind by id the users concertArray
+    var id = req.session.userId 
+    //req.body.event, '<------ SESSION OBJECT')
+    User.findByIdAndUpdate(id, {$push: {"concertIDs": req.body.event}}, 
+      {safe: true, upsert: true, new: true}, 
+      function(err, user) {
+        if (err) {
+          console.log(err);
+          res.send(err)
+        } else {
+          console.log(user.concertIDs);
+          console.log(user)
+          res.json(user)
+        }
+    })
     // we respond with res.json()
-    res.json({
+   
       // status: 'ok',
       // concerts: users.concertArray
-    }) // <--- Don't render arute onan AJAX call
+   // <--- Don't render arute onan AJAX call
     //  Respond with jSON(res.json({...}))
 
     // if error...
