@@ -6,6 +6,18 @@
     superagent = require('superagent');
 
 
+// Apis.route('/add')
+//   .post(function(req, res, next) {
+//     User.findById('_id': , function(err, user) {
+//       if (err) {
+//         console.log(err)
+//       } else {
+//         user.eventsArray.push(req.body.event);
+//       }
+
+//     })
+//   });
+
 Apis.route('/')
   //GET
   .get(function(req, res, next) {
@@ -13,8 +25,6 @@ Apis.route('/')
   })
   //POST
   .post(function(req, res, next) {
-    console.log(req.body.username);
-    // sets artists
     var artist = req.body.artist;
     var url = 'http://api.bandsintown.com/artists/' + artist + '/events.json?api_version=2.0&app_id=projectGA';
     superagent.get(url, function(error, response){
