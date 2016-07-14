@@ -1,28 +1,35 @@
 <h1>Apis</h1>
-
-{{>calendar}}
-
-<form id="api-filter" action="/apis" method="post">
-<ul>
-  <li>
-    <label>Enter Band: </label>
-    <input type="text" name="artist" val="">
-
-  </li>
-
-  <button type="submit">Submit</button>
-</ul>
-
-
-</form>
-<div style="overflow:scroll; height:400px; width:400px;">
-<ul>
-  {{#each pageTitle}}
-    <li><a class="concertClick" href="#">{{this}}</a></li>
-  {{/each}}
-  <!-- <li>{{{pageTitle}}}</li> -->
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <div class="results">
+        <form id="api-filter" action="/apis" method="post">
+          <ul>
+            <li>
+              <label>Enter Band: </label>
+              <input type="text" name="artist" val="">
+            </li>
+            <button type="submit">Submit</button>
+          </ul>
+        </form>
+        <div class="res">
+        <ul>
+          {{#each pageTitle}}
+            <li><a class="concertClick" href="#">{{this}}</a></li>
+          {{/each}}
+          <!-- <li>{{{pageTitle}}}</li> -->
+        </ul> 
+        </div> 
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="calendar">
+        {{>calendar}}
+      </div>
+    </div>
+  </div>
 </div>
+
 <p id="userId">{{{userId}}}</p>
 
 <div style="overflow:scroll; height:400px; width:400px;">
