@@ -40,7 +40,12 @@ $('.concertClick').click(function() {
       alert(error);
     },
     success: function(data) {
-      $('.myAdds').append('<li>'+ data.concertIDs +'</li>');
+      concerts = data.concertIDs.filter(function(n){ return n != undefined }); 
+      for (var i = 0; i <concerts.length; i++) {
+        $('.myAdds').innerHTML = '';
+        $('.myAdds').append('<li>'+ concerts[i] +'</li>');
+      }
+
     }
   });
 });
