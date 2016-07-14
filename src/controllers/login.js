@@ -18,13 +18,11 @@ LoginController.route('/?')
   .post(function(req, res, next) {
     User.findOne({username: req.body.username}, function(err, user) {
       if (err || !user) {
-        console.log(user)
         res.send('Error');
       } else {
         bcrypt.compare(req.body.password, user.password, function(error, result) {
           if (error || !result) {
-            console.log(error)
-            res.send('Error')
+            res.redirect('/login')
           } else {
             req.session.isLoggedIn = true;
             req.session.userId     = user._id;

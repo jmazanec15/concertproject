@@ -52,7 +52,7 @@ var sessionTracker = function(req, res, next) {
   // 3. If no, redirect to signup or login page
   if (_.includes(requiresAuth, path[0])) {
     if (req.session.isLoggedIn && req.session.userId)  next();
-    else res.redirect('/register');
+    else res.redirect('/login');
   } else {
     res.redirect('/login');
   }
