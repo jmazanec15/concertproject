@@ -17,23 +17,33 @@ Apis.route('/add')
           console.log(err);
           res.send(err)
         } else {
-          console.log(user.concertIDs);
-          console.log(user)
           res.json(user)
         }
     })
-    // we respond with res.json()
-   
-      // status: 'ok',
-      // concerts: users.concertArray
-   // <--- Don't render arute onan AJAX call
-    //  Respond with jSON(res.json({...}))
+  });
 
-    // if error...
-    // res.json({
-    //   status: 'error',
-    //   concerts: []
-    // })
+// delete method
+Apis.route('/remove')
+  .post(function(req, res, next) {
+    var id = req.session.userId,
+        event = req.body.event;
+    //req.body.event, '<------ SESSION OBJECT')
+    User.findById(id, function(err, user) {
+        if (err) {
+          console.log(err);
+          res.send(err)
+        } else {
+          conc = user.concertIDs
+          for (var i = conc.length - 1; i >= 0; i--) {
+            if (conc[i] === event) {
+              user.concertIDs[i] = null
+            } else {
+
+            }
+          }
+          res.json(user)
+        }
+    })
   });
 
 Apis.route('/')
