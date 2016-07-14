@@ -1,10 +1,10 @@
 var express         = require('express'),
-    loginController = express.Router(),
+    LoginController = express.Router(),
     fs              = require('fs'),
     User            = require('../models/user'),
     bcrypt          = require('bcrypt');
 
-loginController.route('/?')
+LoginController.route('/?')
   //GET /
   //-----
   //Render the login page
@@ -36,4 +36,4 @@ loginController.route('/?')
     })
   })
 
-  module.exports = loginController
+  module.exports = LoginController
