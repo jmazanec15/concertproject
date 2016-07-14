@@ -1,0 +1,81 @@
+// create max- width and min-width so that the row cannot be bigger 
+// or smaller than the specified values
+@max-width: 1140px;
+@min-width: 755px;
+
+// max number of total number of columns to loop through later
+@total-columns: 12;
+
+// margin between two different elements
+@gutter: 3%;
+
+
+// padding between stuff inside container and its edge
+.container {
+  padding: 0 30px;
+}
+
+
+// row is as big as what it is inside
+// clearfix google meaning not sure what it does
+.row {
+  width: 100%;
+  max-width: @max-width;
+  min-width: @min-width;
+  margin: 0 auto;
+  padding: 0.5em 0;
+  .clearfix;
+
+
+}
+
+
+// Creating columns
+
+
+// pretty much a while loop
+.create-columns(@i) when (@i>0) {
+  // math to make sure that everything fits
+  @column-width: (((@max-width * @i) / @total-columns) * 100) / @max-width;
+  // width to consider for margins
+  @missing-width: (@gutter * ((@total-columns / @i) - 1)) / (@total-columns / @i);
+  // final width
+  @width: @column-width - @missing-width; 
+
+// properties on whatever column class you use
+  .col-@{i} {
+    display: block;
+    position: relative;
+    float: left;
+    width: @width;  
+    margin-right: @gutter;
+
+    // make sure last element doesnt have a margin on its right
+    &:last-child  {
+      margin-right: 0;
+    } 
+  }
+
+  .create-columns(@i - 1);
+}
+
+.create-columns(@total-columns);
+
+// Clear Fix mixin
+.clearfix() {
+  *zoom:1;
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+
+}
+body {
+  background-color: orange;
+}
+
