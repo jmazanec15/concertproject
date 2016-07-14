@@ -1,4 +1,18 @@
-<h1>Apis</h1>
+<header class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1 class="heading">
+        Home
+      </h1>
+    </div>
+  
+    <div class="col-6">
+      <button class="logout">Logout</button>
+    </div>
+  </div>
+
+
+</header>
 <div class="container">
   <div class="row">
     <div class="col-4">
@@ -27,17 +41,18 @@
         {{>calendar}}
       </div>
     </div>
+    <div class="col-3">
+      <div class="adds">
+        <ul class="myAdds" id="myAdds">
+        </ul>
+        </div>
+    </div>
   </div>
 </div>
 
 <p id="userId">{{{userId}}}</p>
 
-<div style="overflow:scroll; height:400px; width:400px;">
-<ul class="myAdds" id="myAdds">
 
-  
-</ul>
-</div>
-<button class="logout">Logout</button>
+
 
 

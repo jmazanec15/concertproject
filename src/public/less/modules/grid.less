@@ -80,15 +80,54 @@ body {
 }
 
 .col-4:last-child {
-  display: relative;
+  position: relative;
   left: 5%;
 }
+.col-4 {
+  list-style: none;
+}
+// .col-4 > .results {
+//   list-style: none;
+//   margin: 0px;
+//   position: relative;
+//   left: 0%;
+//   overflow: scroll;
+//   height: 400px; 
+//   width: 300px;
+//   background-color: silver
+// }
 
-.col-4 > .results {
-  margin: 0px;
-  display: relative;
-  left: 0%;
-  overflow: scroll;
-  height: 400px; 
-  width: 400px;
+.col-3 {
+  margin-right: 0;
+  position: relative;
+  right: 0;
+  overflow:scroll; 
+  height:400px; 
+  width:300px;
+  background-color: silver;
+}
+
+.logout {
+  position: absolute;
+  right: 0;
+}
+
+.heading {
+  position: relative;
+
+}
+
+.res{
+  ul {
+    overflow:scroll;
+    height:400px; 
+    width:300px;
+    background-color: silver;
+  }
+  li {
+    list-style: none;
+  }
+  li:(2n+1) {
+    background-color: black;
+  }
 }
