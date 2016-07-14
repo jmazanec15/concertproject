@@ -1,6 +1,6 @@
 var dateSelected = document.getElementById('dateSelected')
- dateSongs       = document.getElementById('dateSongs')
- concertData     = document.getElementById('myAdds')
+    dateSongs    = document.getElementById('dateSongs')
+    concertData  = document.getElementById('myAdds')
  
 
 
@@ -12,28 +12,32 @@ $( "#date" ).datepicker({
   buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
   buttonImageOnly: true,
   onSelect: function(date) {
+    console.log(date);
     dateSelected.innerHTML = 'Concerts on ' + (date);
+    if (dateSongs.children.length === 0) {
+      for (i = 0; i <= concertData.children.length; i++) {
+          if (concertData.children[i].innerHTML.match(date) == (date)) {
+            console.log(concertData.children[i].innerHTML);
+            dateSongs.appendChild(concertData.children[i]);
+          } else {
+            console.log('erro')
+          } 
+ 
+        }
+      } else if (dateSongs.children.length > 0) {
+          for (i = 0; i < dateSongs.children.length; i++) {
+            console.log(i);
+            concertData.appendChild(dateSongs.children[i]) 
+          }
+        
+      } else {
+        console.log('all done')
+      }
 
-    
-
-    if (concertData.children[0].innerHTML.match(date)[0] === (date) ) {
-     var arr = concertData.children[0].innerHTML.split('/2016'); 
-     for (i =0; i <= arr.length; i++) {
-      dateSongs.appendChild(concertData);
-      console.log(arr[i])
+       
      }
-     
-      dateSongs.appendChild(concertData);
-      console.log('success');
-    } else {
-        console.log('error');
 
-  };
-}
+
     
-
-
-
-
 });
 

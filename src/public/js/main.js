@@ -14,8 +14,11 @@ $('document').ready(function() {
       alert(error);
     },
     success: function(data) {
-      $('.myAdds').append('<li>'+ data.concertIDs +'</li>');
+    var concerts = data.concertIDs.filter(function(n){ return n != undefined }); 
+    for (var i = 0; i <concerts.length; i++) {
+      $('.myAdds').append('<li>'+ concerts[i] +'</li>');
     }
+  }
   });
 })
 
@@ -40,9 +43,9 @@ $('.concertClick').click(function() {
       alert(error);
     },
     success: function(data) {
-      concerts = data.concertIDs.filter(function(n){ return n != undefined }); 
+      $('.myAdds').empty();
+      var concerts = data.concertIDs.filter(function(n){ return n != undefined }); 
       for (var i = 0; i <concerts.length; i++) {
-        $('.myAdds').innerHTML = '';
         $('.myAdds').append('<li>'+ concerts[i] +'</li>');
       }
 
