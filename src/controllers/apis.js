@@ -27,21 +27,24 @@ Apis.route('/remove')
   .post(function(req, res, next) {
     var id = req.session.userId,
         event = req.body.event;
-    //req.body.event, '<------ SESSION OBJECT')
     User.findById(id, function(err, user) {
         if (err) {
           console.log(err);
           res.send(err)
         } else {
-          conc = user.concertIDs
-          for (var i = conc.length - 1; i >= 0; i--) {
-            if (conc[i] === event) {
+          for (var i = user.concertIDs.length - 1; i >= 0; i--) {
+            if (user.concertIDs[i] === event) {
+
               user.concertIDs[i] = null
+
             } else {
 
             }
           }
-          res.json(user)
+          var newConcerts = user.concertIDs
+          User.findByIdAndUpdate(id,{$set: {"concertIDs": newConcerts}} ,function(error, newUser) {
+          })
+          res.json(user);    
         }
     })
   });
