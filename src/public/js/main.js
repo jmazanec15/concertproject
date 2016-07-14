@@ -76,3 +76,24 @@ $('.concertClick').click(function() {
     }
   });
 });
+
+$('.logout').click(function() {
+
+  var self = this;
+  $.ajax({
+    url:'/apis/logout',
+    type:'get',
+    data: {},
+    error: function(error) {
+      console.log(error);
+      alert(error);
+    },
+    success: function(data) {
+      console.log('worked')
+
+      }
+
+  });
+  location.reload();
+});
+

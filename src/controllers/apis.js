@@ -5,6 +5,12 @@
     User       = require('../models/user'),
     superagent = require('superagent');
 
+Apis.route('/logout')
+  .get(function(req, res, next) {
+    req.session.isLoggedIn = false;
+    res.send('worked')
+  });
+
 
 Apis.route('/add')
   .post(function(req, res, next) {
