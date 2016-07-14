@@ -15,11 +15,14 @@ $( "#date" ).datepicker({
     console.log(date);
     dateSelected.innerHTML = 'Concerts on ' + (date);
     if (dateSongs.children.length === 0) {
-      for (i = 0; i <= concertData.children.length; i++) {
-          if (concertData.children[i].textContent.match(date) == (date)) {
-            console.log(concertData.children[i].textContent);
+      for (i = 0; i < concertData.children.length; i++) {
+  
+          if (concertData.children[i].textContent.substr(-11, 11).match(date) == date) {
+            console.log(i);
+            console.log(concertData.children[i].textContent.substr(-11, 11), '<<---substr');
             dateSongs.appendChild(concertData.children[i]);
           } else {
+            console.log(concertData.children[i].textContent.substr(-11, 11), '<<---substr');
             console.log('erro')
           } 
  
