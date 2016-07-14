@@ -16,6 +16,7 @@ $('document').ready(function() {
     success: function(data) {
     var concerts = data.concertIDs.filter(function(n){ return n != undefined }); 
     for (var i = 0; i <concerts.length; i++) {
+
       $('.myAdds').append('<li><a href="#" class="remove">'+ concerts[i] +'</a></li>');
     }
   }
