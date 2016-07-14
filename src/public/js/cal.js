@@ -16,8 +16,8 @@ $( "#date" ).datepicker({
     dateSelected.innerHTML = 'Concerts on ' + (date);
     if (dateSongs.children.length === 0) {
       for (i = 0; i <= concertData.children.length; i++) {
-          if (concertData.children[i].innerHTML.match(date) == (date)) {
-            console.log(concertData.children[i].innerHTML);
+          if (concertData.children[i].textContent.match(date) == (date)) {
+            console.log(concertData.children[i].textContent);
             dateSongs.appendChild(concertData.children[i]);
           } else {
             console.log('erro')
@@ -34,8 +34,7 @@ $( "#date" ).datepicker({
         console.log('all done')
       }
 
-       
-     }
+  }
 
 
     
