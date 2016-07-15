@@ -4,7 +4,8 @@
 // starting, and running the server.
 
 // Require the dependencies
-var express    = require('express'),
+var dotenv     = require('dotenv').config(),
+    express    = require('express'),
     app        = express(),
     exphbs     = require('express-handlebars'),
     hbs        = require('hbs'),
