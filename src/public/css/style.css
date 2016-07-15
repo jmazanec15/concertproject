@@ -561,37 +561,71 @@ textarea {
   margin-right: 0;
 }
 body {
-  background-color: orange;
-}
-.col-4:last-child {
-  position: relative;
-  left: 5%;
-}
-.col-4 {
-  list-style: none;
-}
-.col-3 {
-  margin-right: 0;
-  position: relative;
-  right: 0;
-  overflow: scroll;
-  height: 400px;
-  width: 300px;
-  background-color: silver;
+  background-image: url('../img/151409.jpg');
 }
 .logout {
   position: absolute;
   right: 0;
 }
-.heading {
+header {
+  height: 150%;
   position: relative;
+  background-color: black;
+  opacity: 1;
+  backcolor: white;
+}
+header button {
+  position: absolute;
+  top: 29px;
+  right: 5px;
+}
+header h1 {
+  opacity: 0;
+  position: relative;
+  left: 44%;
+  font-size: 40px;
 }
 .res ul {
   overflow: scroll;
   height: 400px;
   width: 300px;
-  background-color: silver;
+  background-color: black;
+}
+.res ul a {
+  color: white;
+  text-decoration: none;
 }
 .res li {
   list-style: none;
+}
+.adds {
+  margin-right: 0;
+  position: relative;
+  right: 0;
+  top: 82px;
+  overflow: scroll;
+  height: 400px;
+  width: 300px;
+  background-color: black;
+}
+.adds .myAdds {
+  list-style: none;
+}
+.adds .myAdds a {
+  list-style: none;
+  color: white;
+  text-decoration: none;
+}
+.calendar {
+  position: relative;
+  top: 63px;
+}
+.search {
+  list-style: none;
+  display: inline;
+}
+.search li {
+  background-color: black;
+  padding: 1%;
+  color: white;
 }

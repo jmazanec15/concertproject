@@ -1,12 +1,9 @@
 <header class="container">
   <div class="row">
-    <div class="col-6">
+    <div class="col-12">
       <h1 class="heading">
         Home
       </h1>
-    </div>
-  
-    <div class="col-6">
       <button class="logout">Logout</button>
     </div>
   </div>
@@ -18,12 +15,13 @@
     <div class="col-4">
       <div class="results">
         <form id="api-filter" action="/apis" method="post">
-          <ul>
+          <ul class="search">
             <li>
               <label>Enter Band: </label>
               <input type="text" name="artist" val="">
+              <button type="submit">Submit</button>
             </li>
-            <button type="submit">Submit</button>
+            
           </ul>
         </form>
         <div class="res">
@@ -41,7 +39,7 @@
         {{>calendar}}
       </div>
     </div>
-    <div class="col-3">
+    <div class="col-4">
       <div class="adds">
         <ul class="myAdds" id="myAdds">
         </ul>

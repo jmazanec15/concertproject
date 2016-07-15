@@ -76,35 +76,7 @@
 
 }
 body {
-  background-color: orange;
-}
-
-.col-4:last-child {
-  position: relative;
-  left: 5%;
-}
-.col-4 {
-  list-style: none;
-}
-// .col-4 > .results {
-//   list-style: none;
-//   margin: 0px;
-//   position: relative;
-//   left: 0%;
-//   overflow: scroll;
-//   height: 400px; 
-//   width: 300px;
-//   background-color: silver
-// }
-
-.col-3 {
-  margin-right: 0;
-  position: relative;
-  right: 0;
-  overflow:scroll; 
-  height:400px; 
-  width:300px;
-  background-color: silver;
+  background-image: url('../img/151409.jpg');
 }
 
 .logout {
@@ -112,9 +84,24 @@ body {
   right: 0;
 }
 
-.heading {
+header {
+  height: 150%;
   position: relative;
-
+  background-color: black;
+  opacity: 1;
+  back
+  color: white;
+  button {
+    position: absolute;
+    top: 29px;
+    right: 5px;
+  }
+  h1 {
+    opacity: 0;
+    position: relative;
+    left: 44%;
+    font-size: 40px;
+  }
 }
 
 .res{
@@ -122,12 +109,48 @@ body {
     overflow:scroll;
     height:400px; 
     width:300px;
-    background-color: silver;
+    background-color: black;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
   }
   li {
     list-style: none;
   }
-  li:(2n+1) {
+
+}
+.adds {
+  margin-right: 0;
+  position: relative;
+  right: 0;
+  top: 82px;
+  overflow:scroll; 
+  height:400px; 
+  width:300px;
+  background-color: black;
+  .myAdds {
+    list-style: none;
+    a {
+      list-style: none;
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+.calendar {
+  position: relative;
+  top: 63px;
+}
+
+.search {
+  list-style: none;
+  display: inline;
+  li {
     background-color: black;
+    padding: 1%;
+    color: white;
   }
 }
