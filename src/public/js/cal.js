@@ -9,7 +9,6 @@ $( "#date" ).datepicker({
   changeYear: true,
   dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
   showOn: "both",
-  buttonText: "THIS IS A BUTTON",
   buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
   buttonImageOnly: false,
   onSelect: function(date) {
@@ -43,4 +42,3 @@ $( "#date" ).datepicker({
 
     
 });
-
