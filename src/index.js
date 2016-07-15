@@ -60,6 +60,7 @@ var sessionTracker = function(req, res, next) {
 
 app.use('/register', require('./controllers/register'));
 app.use('/login', require('./controllers/login'));
+app.use('/home', require('./controllers/home'));
 app.use(sessionTracker);
 app.use('/apis', require('./controllers/apis'));
 
