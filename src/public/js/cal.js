@@ -8,9 +8,10 @@ $( "#date" ).datepicker({
   changeMonth: true,
   changeYear: true,
   dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-  showOn: "button",
+  showOn: "both",
+  buttonText: "THIS IS A BUTTON",
   buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
-  buttonImageOnly: true,
+  buttonImageOnly: false,
   onSelect: function(date) {
     console.log(date);
     dateSelected.innerHTML = 'Concerts on ' + (date);
