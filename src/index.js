@@ -66,6 +66,6 @@ app.use(sessionTracker);
 app.use('/apis', require('./controllers/apis'));
 
 // Start server, listen in on a port
-var server = app.listen(3000, function() {
+var server = app.listen(process.env.PORT || 3000, function() {
   console.log('Server listening at http://localhost:' + server.address().port);
 });
