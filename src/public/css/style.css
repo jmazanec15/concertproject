@@ -563,62 +563,105 @@ textarea {
 body {
   background-image: url('../img/151409.jpg');
 }
-.logout {
-  position: absolute;
-  right: 0;
-}
 header {
-  height: 150%;
+  height: 100px;
   position: relative;
   background-color: black;
-  opacity: 1;
-  backcolor: white;
+  opacity: .8;
+  padding: 0;
 }
-header button {
+header .logout {
   position: absolute;
-  top: 29px;
-  right: 5px;
+  right: 0;
+  top: 15%;
 }
 header h1 {
-  opacity: 0;
+  font-family: 'Shadows Into Light', cursive, sans-serif;
+  position: absolute;
+  top: 15px;
+  margin: 0;
+  text-align: center;
+  color: white;
   position: relative;
-  left: 44%;
-  font-size: 40px;
+  font-size: 65px;
+}
+.results {
+  position: absolute;
+  left: 0;
+  top: 0px;
+}
+.res {
+  opacity: .87;
 }
 .res ul {
+  padding: 0;
+  border: 4px solid black;
+  border-radius: 5px;
   overflow: scroll;
   height: 400px;
   width: 300px;
   background-color: black;
 }
 .res ul a {
-  color: white;
   text-decoration: none;
 }
-.res li {
+.res ul li {
+  margin: 0;
+  padding: 3px;
+  width: 100%;
   list-style: none;
 }
+.res ul li:nth-child(even) {
+  background-color: #448dd2;
+}
+.res ul li:nth-child(even) a {
+  color: white;
+}
+.res ul li:nth-child(odd) {
+  background-color: white;
+}
+.res ul li:nth-child(odd) a {
+  color: black;
+}
 .adds {
+  opacity: .87;
   margin-right: 0;
-  position: relative;
-  right: 0;
-  top: 82px;
+  position: absolute;
+  left: 230%;
+  top: 172px;
   overflow: scroll;
   height: 400px;
   width: 300px;
-  background-color: black;
+  border: 4px solid black;
+  border-radius: 5px;
 }
 .adds .myAdds {
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 .adds .myAdds a {
-  list-style: none;
-  color: white;
   text-decoration: none;
 }
+.adds .myAdds li:nth-child(even) {
+  padding: 3px;
+  background-color: #448dd2;
+}
+.adds .myAdds li:nth-child(even) a {
+  color: white;
+}
+.adds .myAdds li:nth-child(odd) {
+  padding: 3px;
+  background-color: white;
+}
+.adds .myAdds li:nth-child(odd) a {
+  color: black;
+}
 .calendar {
-  position: relative;
+  opacity: .75;
+  position: absolute;
   top: 63px;
+  left: 115%;
 }
 .search {
   list-style: none;
@@ -628,4 +671,78 @@ header h1 {
   background-color: black;
   padding: 1%;
   color: white;
+}
+#api-filter {
+  width: 87%;
+  padding: 5%;
+}
+#api-filter button {
+  position: absolute;
+  right: 12%;
+  top: 7.5%;
+}
+#api-filter input {
+  margin: 2%;
+}
+.instructions {
+  margin-left: 3%;
+  padding-left: 4%;
+  border: 1px solid black;
+  border-radius: 3%;
+  font-size: 18px;
+  color: white;
+  background-color: black;
+  opacity: .87;
+  height: 50px;
+  width: 90%;
+}
+.radar {
+  padding-left: 10px;
+  position: absolute;
+  top: 105px;
+  left: 231%;
+  border: 1px solid black;
+  border-radius: 3%;
+  font-size: 18px;
+  color: white;
+  background-color: black;
+  opacity: .87;
+  height: 50px;
+  width: 80%;
+}
+#dateSelected {
+  position: absolute;
+  left: 4%;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 3%;
+  font-size: 18px;
+  color: white;
+  background-color: black;
+  opacity: .87;
+  height: 20px;
+  width: 90%;
+}
+#dateSongs {
+  position: relative;
+  top: 60px;
+  right: 20px;
+  list-style: none;
+}
+#dateSongs a {
+  text-decoration: none;
+}
+#dateSongs li:nth-child(even) {
+  padding: 3px;
+  background-color: #448dd2;
+}
+#dateSongs li:nth-child(even) a {
+  color: white;
+}
+#dateSongs li:nth-child(odd) {
+  padding: 3px;
+  background-color: white;
+}
+#dateSongs li:nth-child(odd) a {
+  color: black;
 }

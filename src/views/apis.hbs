@@ -17,13 +17,15 @@
         <form id="api-filter" action="/apis" method="post">
           <ul class="search">
             <li>
-              <label>Enter Band: </label>
-              <input type="text" name="artist" val="">
+              <input type="text" name="artist" placeholder="Look up a band" val="">
               <button type="submit">Submit</button>
             </li>
             
           </ul>
         </form>
+        <div class="instructions">
+          <p>Click concert to add to your radar</p>
+        </div>
         <div class="res">
         <ul>
           {{#each pageTitle}}
@@ -40,6 +42,9 @@
       </div>
     </div>
     <div class="col-4">
+        <div class="radar">
+          <p>Concert Radar</p>
+        </div>
       <div class="adds">
         <ul class="myAdds" id="myAdds">
         </ul>
