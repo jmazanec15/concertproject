@@ -97,3 +97,12 @@ $('.logout').click(function() {
   });
   location.reload();
 });
+
+$('.login-home').click(function() {
+   window.location = '/login';
+  });
+
+
+$('.register-home').click(function() {
+   window.location = '/register';
+  });
